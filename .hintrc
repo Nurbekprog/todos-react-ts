@@ -10,6 +10,14 @@
         "label": "off"
       }
     ],
-    "typescript-config/strict": "off"
+    "typescript-config/strict": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "scale"
+        ]
+      }
+    ]
   }
 }
