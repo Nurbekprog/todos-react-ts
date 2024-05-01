@@ -6,12 +6,10 @@ import TodoList from "./components/TodoList";
 import InputField from "./components/InputField";
 import { DragDropContext, DropResult } from '@hello-pangea/dnd'
 
-
-
 const App: React.FC = () => {
 
   const [todo, setTodo] = React.useState("")
-  const [todoArr, setTodoArr] = React.useState<Todo[]>(JSON.parse(localStorage.getItem("todoArray")) || [])
+  const [todoArr, setTodoArr] = React.useState<Todo[]>(JSON.parse(localStorage.getItem("todoArray") || "[]"))
 
 
   React.useEffect(() => {
