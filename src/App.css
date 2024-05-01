@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    margin: 0;
+    background-color: #191825;
+}
+
+.App {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Neucha', cursive;
+}
+
+.heading {
+    font-size: 4rem;
+    margin: 30px 0;
+    color: whitesmoke;
+    z-index: 1;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 800px) {
+    .heading {
+        margin: 15px 0;
+        font-size: 35px;
+    }
+}

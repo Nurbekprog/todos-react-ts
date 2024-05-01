@@ -1,0 +1,154 @@
+:root {
+    --width: 95%
+}
+
+.input {
+    display: flex;
+    width: var(--width);
+    position: relative; 
+    /* Since button has to be placed inside the input, and given absolute positioning, hence the parent will be relative positioned */
+    align-items: center;
+}
+
+.input__box {
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px 30px;
+    font-size: 25px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+}
+
+.input__box:focus {
+    box-shadow: 0 0 10px 1000px rgba(0, 0,0, 0.5);
+    outline: none;
+}
+
+.input__submit {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 12px;
+    border-radius: 50px;
+    right: 0;
+    border: none;
+    font-size: 1rem;
+    background-color: #2f74c0;
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+
+.input__submit:hover {
+    background-color: #388ae2;
+}
+
+.input__submit:active {
+    transform: scale(0.8);
+    box-shadow: 0 0 5px black;
+}
+
+.container {
+    display: flex;
+    width: var(--width);
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: flex-start;
+}
+
+.todos {
+    width: 47.5%;
+    margin: 2rem 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: rgb(50, 195, 205);
+    color: white
+}
+
+.remove {
+    background-color: #FF6D60;
+}
+
+.todos_heading {
+    font-size: 30px;
+}
+
+.todos_single {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 1.25rem;
+    background-color: antiquewhite;
+    transition: 0.2s;
+    background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+    color: black;
+}
+
+.todos_single:hover {
+    box-shadow: 0 0 20px gray;
+    scale: 1.03;
+}
+
+.todos_single_text:focus {
+    outline: none;
+}
+.icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .input {
+        width: var(--width);
+    }
+    .todos {
+        width: var(--width);
+        margin-bottom: 0.9rem;
+    }
+    .container {
+        width: 90%;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1100px) {
+    .todos {
+        width: inherit
+    }
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
+.drag {
+    animation: background-pan 1s linear infinite;
+    background: linear-gradient(
+        to right,
+        rgb(98,0,234),
+        rgb(236,64,122),
+        rgb(98,0,234)
+
+    );
+    color: white;
+    background-size: 200%;
+}
+
+.done {
+    color:#4E6E81;
+    background-color: #9DB2BF;
+    background-image: none;
+    text-decoration: line-through;
+}
