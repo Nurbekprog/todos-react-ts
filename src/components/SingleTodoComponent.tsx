@@ -9,9 +9,7 @@ interface Props {
     todo: Todo;
     todoArr: Todo[];
     setTodoArr: React.Dispatch<React.SetStateAction<Todo[]>>;
-    // dispatch: React.Dispatch<Actions>
     index: number;
-    // setCompletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>
     handleDone(id: string): void
 }
 

@@ -1,4 +1,4 @@
-# Taskify - The TODO App
+# The TODO App
 This is a simple NoteTaking App I created using React and TypeScript, with Vite as the build tool.
 
 ![image](https://github.com/Harsh32044/react-TS-vite/assets/44403685/113d1577-38cf-47ba-bba8-490c2c33acac)

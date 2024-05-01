@@ -1,31 +1,18 @@
 import React from "react";
 import './App.css'
-import InputField from "./components/InputField";
 import { Todo } from "./model";
 import { nanoid } from "nanoid";
 import TodoList from "./components/TodoList";
+import InputField from "./components/InputField";
 import { DragDropContext, DropResult } from '@hello-pangea/dnd'
 
-// const TodoReducer = (todos: Todo[], action: Actions) => {
-//   switch (action.type) {
-//     case 'add':
-//       return [
-//         ...todos, {id: nanoid(), todo: action.payload, isDone: false}
-//       ]
-//     case 'delete':
-//       return todos.filter(todoItem => todoItem.id !== action.payload)
-//     case 'done':
-//       return todos.map(todoItem => todoItem.id === action.payload ? {...todoItem, isDone: !todoItem.isDone} : todoItem )
-//   }
-// }
+
 
 const App: React.FC = () => {
 
   const [todo, setTodo] = React.useState("")
-  //Array of TODOs
   const [todoArr, setTodoArr] = React.useState<Todo[]>(JSON.parse(localStorage.getItem("todoArray")) || [])
 
-  // const [todos, dispatch] = React.useReducer(TodoReducer, [])
 
   React.useEffect(() => {
     localStorage.setItem("todoArray", JSON.stringify(todoArr))
@@ -36,7 +23,7 @@ const App: React.FC = () => {
   React.useEffect(() => {
     const compTD: Todo[] = todoArr.filter(item => item.isDone)
     setCompletedTodos(compTD)
-  }, [])
+  }, [todoArr])
   
   function handleAdd(e: React.FormEvent) {
     e.preventDefault()
@@ -97,7 +84,7 @@ const App: React.FC = () => {
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
     <div className="App">
-      <span className="heading">TASKIFY - The Todo App you need</span>
+      <span className="heading">Todo App</span>
       <InputField todo={todo} setTodo ={setTodo} handleAdd={handleAdd}/>
       <TodoList todoArr={todoArr} setTodoArr={setTodoArr} completedTodos={completedTodos} handleDone={(handleDone)}/>
     </div>

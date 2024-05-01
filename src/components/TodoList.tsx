@@ -9,10 +9,7 @@ interface Props {
   todoArr: Todo[];
   setTodoArr: React.Dispatch<React.SetStateAction<Todo[]>>;
   completedTodos: Todo[]
-  // setCompletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
   handleDone (id: string): void
-
-  // dispatch: React.Dispatch<Actions>
 }
 
 const TodoList: React.FC<Props> = ({ todoArr, setTodoArr, completedTodos, handleDone }) => {
